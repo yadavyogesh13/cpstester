@@ -99,8 +99,8 @@ export default function Disclaimer() {
               If you have any questions about this Disclaimer, please contact us at:
             </p>
             <p>
-              <a href="mailto:legal@cpsscore.com" className="text-primary hover:underline">
-                legal@cpsscore.com
+              <a href="mailto:yadavyogesh0913@gmail.com" className="text-primary hover:underline">
+                yadavyogesh0913@gmail.com
               </a>
             </p>
           </div>
