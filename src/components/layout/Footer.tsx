@@ -9,7 +9,7 @@ const toolLinks = [
 ];
 
 const legalLinks = [
-  { path: "/privacy", label: "Privacy Policy" },
+  { path: "/privacy-policy", label: "Privacy Policy" },
   { path: "/terms", label: "Terms of Service" },
   { path: "/disclaimer", label: "Disclaimer" },
 ];
