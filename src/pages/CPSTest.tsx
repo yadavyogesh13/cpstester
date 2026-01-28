@@ -229,7 +229,7 @@ export default function CPSTest() {
                 Simply select your preferred test duration, click the test area to begin, and click 
                 as fast as you can until the timer runs out.
               </p>
-              <h3 className="text-lg font-semibold text-foreground">CPS Score Rankings</h3>
+              <h3 className="text-lg font-semibold text-foreground">CPS Checker Rankings</h3>
               <ul className="grid gap-2 md:grid-cols-2">
                 <li className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-muted-foreground"></span>

@@ -22,13 +22,13 @@ export default function Terms() {
 
           <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
             <p>
-              Welcome to cpsscore.com. By accessing and using our website, you agree to be bound by these 
+              Welcome to cpschecker.site. By accessing and using our website, you agree to be bound by these 
               Terms of Service. Please read them carefully before using our services.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground">1. Acceptance of Terms</h2>
             <p>
-              By accessing or using cpsscore.com, you agree to be bound by these Terms of Service and all 
+              By accessing or using cpschecker.site, you agree to be bound by these Terms of Service and all 
               applicable laws and regulations. If you do not agree with any of these terms, you are 
               prohibited from using or accessing this site.
             </p>
@@ -36,7 +36,7 @@ export default function Terms() {
             <h2 className="text-2xl font-bold text-foreground">2. Use License</h2>
             <p>
               Permission is granted to temporarily access and use the materials (tests and tools) on 
-              cpsscore.com for personal, non-commercial use only. This license does not include:
+              cpschecker.site for personal, non-commercial use only. This license does not include:
             </p>
             <ul className="list-disc space-y-2 pl-6">
               <li>Modifying or copying our materials</li>
@@ -48,7 +48,7 @@ export default function Terms() {
 
             <h2 className="text-2xl font-bold text-foreground">3. Disclaimer</h2>
             <p>
-              The materials on cpsscore.com are provided on an "as is" basis. cpsscore.com makes no warranties, 
+              The materials on cpschecker.site are provided on an "as is" basis. cpschecker.site makes no warranties, 
               expressed or implied, and hereby disclaims and negates all other warranties including, without 
               limitation:
             </p>
@@ -60,25 +60,25 @@ export default function Terms() {
 
             <h2 className="text-2xl font-bold text-foreground">4. Limitations</h2>
             <p>
-              In no event shall cpsscore.com or its suppliers be liable for any damages (including, without 
+              In no event shall cpschecker.site or its suppliers be liable for any damages (including, without 
               limitation, damages for loss of data or profit, or due to business interruption) arising out 
-              of the use or inability to use the materials on cpsscore.com, even if cpsscore.com or an authorized 
+              of the use or inability to use the materials on cpschecker.site, even if cpschecker.site or an authorized 
               representative has been notified orally or in writing of the possibility of such damage.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground">5. Accuracy of Materials</h2>
             <p>
-              The materials appearing on cpsscore.com could include technical, typographical, or photographic 
-              errors. cpsscore.com does not warrant that any of the materials on its website are accurate, 
+              The materials appearing on cpschecker.site could include technical, typographical, or photographic 
+              errors. cpschecker.site does not warrant that any of the materials on its website are accurate, 
               complete, or current. Test results are provided for entertainment and personal tracking purposes 
               only and should not be considered definitive measurements of ability.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground">6. Links</h2>
             <p>
-              cpsscore.com has not reviewed all of the sites linked to its website and is not responsible for 
+              cpschecker.site has not reviewed all of the sites linked to its website and is not responsible for 
               the contents of any such linked site. The inclusion of any link does not imply endorsement by 
-              cpsscore.com. Use of any such linked website is at the user's own risk.
+              cpschecker.site. Use of any such linked website is at the user's own risk.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground">7. User Conduct</h2>
@@ -95,7 +95,7 @@ export default function Terms() {
 
             <h2 className="text-2xl font-bold text-foreground">8. Modifications</h2>
             <p>
-              cpsscore.com may revise these Terms of Service at any time without notice. By using this website, 
+              cpschecker.site may revise these Terms of Service at any time without notice. By using this website, 
               you are agreeing to be bound by the then-current version of these Terms of Service.
             </p>
 
@@ -110,8 +110,8 @@ export default function Terms() {
               If you have any questions about these Terms of Service, please contact us at:
             </p>
             <p>
-              <a href="mailto:legal@cpsscore.com" className="text-primary hover:underline">
-                legal@cpsscore.com
+              <a href="mailto:legal@cpschecker.site" className="text-primary hover:underline">
+                legal@cpschecker.site
               </a>
             </p>
           </div>

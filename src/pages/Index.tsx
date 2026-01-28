@@ -150,7 +150,7 @@ export default function Index() {
       <section className="border-y border-border/50 bg-muted/30 py-16">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold">Why Choose cpsscore.com?</h2>
+            <h2 className="mb-4 text-3xl font-bold">Why Choose cpschecker.site?</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Built for accuracy and designed for gamers. Our tools provide the precision 
               you need to track your progress and improve your performance.

@@ -22,14 +22,14 @@ export default function Privacy() {
 
           <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
             <p>
-              At cpsscore.com, we are committed to protecting your privacy and ensuring transparency about 
+              At cpschecker.site, we are committed to protecting your privacy and ensuring transparency about 
               how we handle information. This Privacy Policy explains our practices regarding data collection, 
               use, and protection when you use our website.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground">Information We Collect</h2>
             <p>
-              cpsscore.com is designed with privacy in mind. We minimize data collection to only what is 
+              cpschecker.site is designed with privacy in mind. We minimize data collection to only what is 
               necessary for the functionality of our services:
             </p>
             <ul className="list-disc space-y-2 pl-6">

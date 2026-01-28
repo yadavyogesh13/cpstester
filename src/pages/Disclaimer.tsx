@@ -22,7 +22,7 @@ export default function Disclaimer() {
 
           <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
             <p>
-              The information provided by cpsscore.com ("we," "us," or "our") on our website is for general 
+              The information provided by cpschecker.site ("we," "us," or "our") on our website is for general 
               informational and entertainment purposes only. All information on the site is provided in 
               good faith; however, we make no representation or warranty of any kind, express or implied, 
               regarding the accuracy, adequacy, validity, reliability, availability, or completeness of 
@@ -31,7 +31,7 @@ export default function Disclaimer() {
 
             <h2 className="text-2xl font-bold text-foreground">Test Results Disclaimer</h2>
             <p>
-              The test results provided by cpsscore.com (including but not limited to CPS scores, typing 
+              The test results provided by cpschecker.site (including but not limited to CPS Checkers, typing 
               speeds, reaction times, and other measurements) are for personal entertainment and tracking 
               purposes only. These results:
             </p>
@@ -74,7 +74,7 @@ export default function Disclaimer() {
             <h2 className="text-2xl font-bold text-foreground">Errors and Omissions Disclaimer</h2>
             <p>
               While we have made every attempt to ensure that the information contained in this site has 
-              been obtained from reliable sources, cpsscore.com is not responsible for any errors or 
+              been obtained from reliable sources, cpschecker.site is not responsible for any errors or 
               omissions or for the results obtained from the use of this information. All information in 
               this site is provided "as is," with no guarantee of completeness, accuracy, timeliness, or 
               of the results obtained from the use of this information.

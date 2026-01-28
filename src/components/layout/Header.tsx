@@ -22,7 +22,7 @@ export function Header() {
         <Link 
           to="/" 
           className="flex items-center gap-2 text-xl font-bold transition-opacity hover:opacity-80"
-          aria-label="cpsscore.com - Home"
+          aria-label="cpschecker.site - Home"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-bg-primary">
             {/* <Zap className="h-5 w-5 text-primary-foreground" /> */}

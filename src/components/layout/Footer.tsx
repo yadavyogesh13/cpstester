@@ -102,7 +102,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} cpsscore.com. All rights reserved.
+            © {currentYear} cpschecker.site. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Made with precision for gamers worldwide

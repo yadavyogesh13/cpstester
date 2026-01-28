@@ -17,12 +17,12 @@ export default function About() {
           </nav>
 
           <h1 className="mb-8 text-4xl font-black">
-            About <span className="gradient-text">cpsscore.com</span>
+            About <span className="gradient-text">cpschecker.site</span>
           </h1>
 
           <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
             <p className="text-xl leading-relaxed">
-              Welcome to cpsscore.com, your trusted destination for accurate speed and performance testing tools. 
+              Welcome to cpschecker.site, your trusted destination for accurate speed and performance testing tools. 
               We've built a comprehensive suite of tests designed to help gamers, typists, and anyone curious 
               about their abilities measure and improve their skills.
             </p>
@@ -68,7 +68,7 @@ export default function About() {
 
             <h2 className="text-2xl font-bold text-foreground">What We Offer</h2>
             <p>
-              cpsscore.com provides a comprehensive suite of testing tools including:
+              cpschecker.site provides a comprehensive suite of testing tools including:
             </p>
             <ul className="list-disc space-y-2 pl-6">
               <li><strong>CPS Test:</strong> Measure your clicks per second with multiple timer options (1s, 5s, 10s, 30s, 60s)</li>
@@ -79,7 +79,7 @@ export default function About() {
 
             <h2 className="text-2xl font-bold text-foreground">Why Choose Us?</h2>
             <p>
-              Unlike other testing sites that are cluttered with ads and slow to load, cpsscore.com is designed 
+              Unlike other testing sites that are cluttered with ads and slow to load, cpschecker.site is designed 
               with user experience as the top priority. We use modern web technologies to ensure fast load times 
               and smooth performance across all devices. Our tests work equally well on desktop computers, 
               tablets, and mobile phones.
@@ -95,7 +95,7 @@ export default function About() {
               We're committed to continuously improving our tools based on user feedback and the latest research 
               in human-computer interaction. Whether you're a competitive gamer looking to gain an edge, a 
               professional typist wanting to track your speed, or simply curious about your abilities, 
-              cpsscore.com is here to help you measure and improve.
+              cpschecker.site is here to help you measure and improve.
             </p>
 
             <div className="mt-8 flex items-center gap-4 rounded-xl border border-primary/20 bg-primary/5 p-6">
@@ -103,7 +103,7 @@ export default function About() {
               <div>
                 <h3 className="font-bold text-foreground">Thank You</h3>
                 <p className="text-sm">
-                  Thank you for choosing cpsscore.com. We appreciate your support and look forward to helping 
+                  Thank you for choosing cpschecker.site. We appreciate your support and look forward to helping 
                   you achieve your performance goals.
                 </p>
               </div>

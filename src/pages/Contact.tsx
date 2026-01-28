@@ -71,7 +71,7 @@ export default function Contact() {
                 Click the button below to compose an email to our team.
               </p>
               <Button variant="hero" asChild>
-                <a href="mailto:yadavyogesh0913@gmail.com?subject=cpsscore.com%20Inquiry">
+                <a href="mailto:yadavyogesh0913@gmail.com?subject=cpschecker.site%20Inquiry">
                   <Send className="mr-2 h-5 w-5" />
                   Send Email
                 </a>
@@ -90,7 +90,7 @@ export default function Contact() {
             </ul>
 
             <p className="mt-8 text-center text-sm">
-              Thank you for using cpsscore.com. We appreciate your support and feedback!
+              Thank you for using cpschecker.site. We appreciate your support and feedback!
             </p>
           </div>
 
