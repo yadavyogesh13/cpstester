@@ -28,8 +28,8 @@ export function Header() {
             {/* <Zap className="h-5 w-5 text-primary-foreground" /> */}
             <img src="/cps-score-og.png" alt="CPSScore Logo" className="h-5 w-5" />
           </div>
-          <span className="gradient-text">CPSScore</span>
-          <span className="text-muted-foreground">.com</span>
+          <span className="gradient-text">cpschecker</span>
+          <span className="text-muted-foreground">.site</span>
         </Link>
 
         {/* Desktop Navigation */}

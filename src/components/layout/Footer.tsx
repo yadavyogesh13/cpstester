@@ -31,10 +31,10 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2 text-lg font-bold">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg gradient-bg-primary">
                 {/* <Zap className="h-4 w-4 text-primary-foreground" /> */}
-                <img src="/cps-score-og.png" alt="CPSScore Logo" className="h-5 w-5" />
+                <img src="/cps-score-og.png" alt="cpschecker Logo" className="h-5 w-5" />
               </div>
-              <span className="gradient-text">CPSScore</span>
-              <span className="text-muted-foreground">.com</span>
+              <span className="gradient-text">cpschecker</span>
+              <span className="text-muted-foreground">.site</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               The most accurate online tool for testing your clicks per second, typing speed, and reaction time. Improve your gaming performance today.
