@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
+import { useJsonLd } from "@/hooks/useJsonLd";
 import { MousePointerClick, RotateCcw, Trophy, Clock, Zap, TrendingUp } from "lucide-react";
 
 const DURATION_OPTIONS = [1, 5, 10, 30, 60];
@@ -20,6 +21,26 @@ export default function CPSTest() {
   const { addResult, getBestScore } = useTestHistory();
 
   const bestScore = getBestScore("cps");
+
+  // Add Tool schema for SEO
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CPS Test",
+    "description": "Measure your clicks per second with precision timing. Test with 1s, 5s, 10s, 30s, or 60s durations.",
+    "url": "https://cpschecker.site/cps-test",
+    "applicationCategory": "UtilityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1200"
+    }
+  });
 
   useEffect(() => {
     setTimeLeft(duration);

@@ -1,14 +1,25 @@
-User-agent: Googlebot
-Allow: /
+# CPS Checker - Robots.txt for SEO
+# Allow search engines to crawl all content
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# Google
 User-agent: *
 Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Other search engines
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://cpschecker.site/sitemap.xml

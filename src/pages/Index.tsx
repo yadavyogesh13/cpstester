@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { useJsonLd } from "@/hooks/useJsonLd";
 import { 
   MousePointerClick, 
   Keyboard, 
@@ -69,6 +70,45 @@ const features = [
 ];
 
 export default function Index() {
+  // Add FAQPage schema for SEO
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a CPS test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A CPS (Clicks Per Second) test is a tool that measures how many times you can click your mouse button within a specific time frame. This metric is crucial for gamers, especially those playing competitive games like Minecraft PvP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I improve my CPS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can improve your CPS by practicing regularly, experimenting with different clicking techniques, using a gaming mouse, maintaining good posture, and taking breaks to prevent fatigue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a normal CPS score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average person clicks at a rate of 6-7 CPS. Experienced gamers can achieve 10-12 CPS with regular clicking. Advanced techniques can push this to 12-14 CPS (jitter clicking) or 15-25 CPS (butterfly clicking)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools does CPS Checker offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CPS Checker offers CPS Test, Typing Speed Test, Spacebar Speed Test, and Reaction Time Test - all free, no registration required."
+        }
+      }
+    ]
+  });
   return (
     <Layout>
       {/* Hero Section */}

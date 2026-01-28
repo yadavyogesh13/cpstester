@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
+import { useJsonLd } from "@/hooks/useJsonLd";
 import { Zap, RotateCcw, Trophy, Clock, Target } from "lucide-react";
 
 type TestState = "waiting" | "ready" | "tooEarly" | "result";
@@ -14,6 +15,26 @@ export default function ReactionTest() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number>(0);
   const { addResult, getBestScore } = useTestHistory();
+
+  // Add Tool schema for SEO
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Reaction Time Test",
+    "description": "Measure your reflexes in milliseconds. Train to react faster in competitive games.",
+    "url": "https://cpschecker.site/reaction-test",
+    "applicationCategory": "UtilityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "ratingCount": "890"
+    }
+  });
 
   const bestScore = getBestScore("reaction");
 

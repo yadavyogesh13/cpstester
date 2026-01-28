@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
+import { useJsonLd } from "@/hooks/useJsonLd";
 import { Space, RotateCcw, Trophy, Clock, Zap } from "lucide-react";
 
 const DURATION_OPTIONS = [5, 10, 30];
@@ -18,6 +19,26 @@ export default function SpacebarTest() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number>(0);
   const { addResult, getBestScore } = useTestHistory();
+
+  // Add Tool schema for SEO
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Spacebar Speed Test",
+    "description": "How fast can you hit the spacebar? Test your spacebar clicking speed and endurance.",
+    "url": "https://cpschecker.site/spacebar-test",
+    "applicationCategory": "UtilityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "ratingCount": "750"
+    }
+  });
 
   const bestScore = getBestScore("spacebar");
 

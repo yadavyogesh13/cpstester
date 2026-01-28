@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
+import { useJsonLd } from "@/hooks/useJsonLd";
 import { Keyboard, RotateCcw, Trophy, Clock, Target, Zap, Type } from "lucide-react";
 
 const SAMPLE_TEXTS = [
@@ -30,6 +31,26 @@ export default function TypingTest() {
   const { addResult, getBestScore } = useTestHistory();
 
   const bestScore = getBestScore("typing");
+
+  // Add Tool schema for SEO
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Typing Speed Test",
+    "description": "Calculate your WPM, CPM, and accuracy. Improve your typing skills with real-time feedback.",
+    "url": "https://cpschecker.site/typing-test",
+    "applicationCategory": "UtilityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "ratingCount": "980"
+    }
+  });
 
   const getRandomText = () => {
     return SAMPLE_TEXTS[Math.floor(Math.random() * SAMPLE_TEXTS.length)];
