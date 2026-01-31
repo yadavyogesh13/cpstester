@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
 import { useJsonLd } from "@/hooks/useJsonLd";
+import { useSeo } from "@/hooks/useSeo";
 import { Space, RotateCcw, Trophy, Clock, Zap } from "lucide-react";
 
 const DURATION_OPTIONS = [5, 10, 30];
@@ -19,6 +20,7 @@ export default function SpacebarTest() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number>(0);
   const { addResult, getBestScore } = useTestHistory();
+  const hasSavedResultRef = useRef(false);
 
   // Add Tool schema for SEO
   useJsonLd({
@@ -38,6 +40,15 @@ export default function SpacebarTest() {
       "ratingValue": "4.6",
       "ratingCount": "750"
     }
+  });
+
+  // Page-level SEO meta tags
+  useSeo({
+    title: "Spacebar Test – Spacebar Clicking Speed | CPS Checker",
+    description: "Test your spacebar clicking speed and endurance. Press SPACE or click to start and track your SPS.",
+    url: "https://cpschecker.site/spacebar-test",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "spacebar test, spacebar speed, sps test"
   });
 
   const bestScore = getBestScore("spacebar");
@@ -92,6 +103,7 @@ export default function SpacebarTest() {
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
+    hasSavedResultRef.current = false;
     setTestState("idle");
     setHits(0);
     setTimeLeft(duration);
@@ -99,7 +111,9 @@ export default function SpacebarTest() {
   }, [duration]);
 
   useEffect(() => {
-    if (testState === "finished") {
+    if (testState === "finished" && !hasSavedResultRef.current) {
+      hasSavedResultRef.current = true;
+
       const finalSps = hits / duration;
       setSps(finalSps);
       addResult({

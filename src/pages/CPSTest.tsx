@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
 import { useJsonLd } from "@/hooks/useJsonLd";
+import { useSeo } from "@/hooks/useSeo";
 import { MousePointerClick, RotateCcw, Trophy, Clock, Zap, TrendingUp } from "lucide-react";
 
 const DURATION_OPTIONS = [1, 5, 10, 30, 60];
@@ -40,6 +41,15 @@ export default function CPSTest() {
       "ratingValue": "4.8",
       "ratingCount": "1200"
     }
+  });
+
+  // Page-level SEO meta tags
+  useSeo({
+    title: "CPS Test – Click Speed Test | CPS Checker",
+    description: "Measure clicks per second with our accurate CPS Test. Choose different durations and improve your clicking speed.",
+    url: "https://cpschecker.site/cps-test",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "cps test, click speed test, clicks per second, cps checker"
   });
 
   useEffect(() => {

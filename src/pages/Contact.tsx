@@ -2,8 +2,16 @@ import { Layout } from "@/components/layout/Layout";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Clock, Send } from "lucide-react";
+import { useSeo } from "@/hooks/useSeo";
 
 export default function Contact() {
+  useSeo({
+    title: "Contact – CPS Checker",
+    description: "Contact the CPS Checker team for feedback, bug reports, and partnership inquiries. We're happy to help.",
+    url: "https://cpschecker.site/contact",
+    image: "https://cpschecker.site/cps-score-og.png",
+  });
+
   return (
     <Layout>
       <div className="container py-12 md:py-16">

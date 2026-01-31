@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useJsonLd } from "@/hooks/useJsonLd";
+import { useSeo } from "@/hooks/useSeo";
 import { 
   MousePointerClick, 
   Keyboard, 
@@ -108,6 +109,15 @@ export default function Index() {
         }
       }
     ]
+  });
+
+  // Page-level SEO meta tags
+  useSeo({
+    title: "CPS Checker – Free Online CPS, Typing & Reaction Tests",
+    description: "CPS Checker offers free, accurate online tools for measuring clicks per second, typing speed, spacebar speed, and reaction time. Improve your skills with real-time feedback.",
+    url: "https://cpschecker.site/",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "cps checker, cps test, typing test, reaction test, spacebar test"
   });
   return (
     <Layout>

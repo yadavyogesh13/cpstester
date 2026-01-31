@@ -5,18 +5,25 @@ import { useEffect } from "react";
  * Useful for page-specific schema markup (FAQPage, Article, Tool, etc)
  */
 export function useJsonLd(schema: Record<string, any>) {
+  // Stringify schema once so effect only runs when content changes
+  const schemaStr = JSON.stringify(schema);
+
   useEffect(() => {
-    // Create script element
+    // If an identical script already exists, don't add another
+    const existing = Array.from(document.head.querySelectorAll('script[type="application/ld+json"]')).find(
+      (s) => s.textContent === schemaStr
+    );
+    if (existing) return;
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
-    script.textContent = JSON.stringify(schema);
+    script.textContent = schemaStr;
 
-    // Append to head
     document.head.appendChild(script);
 
-    // Cleanup on unmount
+    // Cleanup: remove script we added
     return () => {
-      document.head.removeChild(script);
+      if (script.parentNode) script.parentNode.removeChild(script);
     };
-  }, [schema]);
+  }, [schemaStr]);
 }

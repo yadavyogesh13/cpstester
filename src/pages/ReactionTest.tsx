@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
 import { useJsonLd } from "@/hooks/useJsonLd";
+import { useSeo } from "@/hooks/useSeo";
 import { Zap, RotateCcw, Trophy, Clock, Target } from "lucide-react";
 
 type TestState = "waiting" | "ready" | "tooEarly" | "result";
@@ -34,6 +35,15 @@ export default function ReactionTest() {
       "ratingValue": "4.7",
       "ratingCount": "890"
     }
+  });
+
+  // Page-level SEO meta tags
+  useSeo({
+    title: "Reaction Time Test – Measure Reflexes | CPS Checker",
+    description: "Check and improve your reaction time in milliseconds. Simple and accurate reaction test for gamers and athletes.",
+    url: "https://cpschecker.site/reaction-test",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "reaction time test, reflex test, reaction test"
   });
 
   const bestScore = getBestScore("reaction");

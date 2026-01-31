@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTestHistory } from "@/hooks/useLocalStorage";
 import { useJsonLd } from "@/hooks/useJsonLd";
+import { useSeo } from "@/hooks/useSeo";
 import { Keyboard, RotateCcw, Trophy, Clock, Target, Zap, Type } from "lucide-react";
 
 const SAMPLE_TEXTS = [
@@ -50,6 +51,15 @@ export default function TypingTest() {
       "ratingValue": "4.7",
       "ratingCount": "980"
     }
+  });
+
+  // Page-level SEO meta tags
+  useSeo({
+    title: "Typing Test – WPM & Accuracy | CPS Checker",
+    description: "Measure your typing speed with our WPM and accuracy test. Improve typing skills with real-time feedback and progress tracking.",
+    url: "https://cpschecker.site/typing-test",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "typing test, wpm test, typing speed test"
   });
 
   const getRandomText = () => {

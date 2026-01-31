@@ -1,8 +1,16 @@
 import { Layout } from "@/components/layout/Layout";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { Target, Users, Zap, Shield, Heart, Award } from "lucide-react";
+import { useSeo } from "@/hooks/useSeo";
 
 export default function About() {
+  useSeo({
+    title: "About – CPS Checker",
+    description: "Learn about cpschecker.site — mission, privacy, and the tools we offer. Accurate and privacy-first speed testing for everyone.",
+    url: "https://cpschecker.site/about",
+    image: "https://cpschecker.site/cps-score-og.png",
+  });
+
   return (
     <Layout>
       <div className="container py-12 md:py-16">

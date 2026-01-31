@@ -1,8 +1,12 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useSeo } from "@/hooks/useSeo";
 
 const NotFound = () => {
   const location = useLocation();
+
+  // Prevent indexing of 404 pages
+  useSeo({ title: "404 - Page Not Found | CPS Checker", noindex: true, url: window.location.href });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
