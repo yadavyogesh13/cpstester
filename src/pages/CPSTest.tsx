@@ -45,11 +45,12 @@ export default function CPSTest() {
 
   // Page-level SEO meta tags
   useSeo({
-    title: "CPS Test – Click Speed Test | CPS Checker",
-    description: "Measure clicks per second with our accurate CPS Test. Choose different durations and improve your clicking speed.",
+    title: "CPS Test (Clicks Per Second) – Free Click Speed Test | CPS Checker",
+    // description: "Measure clicks per second with our accurate CPS Test. Choose different durations and improve your clicking speed.",
+    description: "Test your clicking speed with our free CPS Test. Measure clicks per second in 1s, 5s, 10s, 30s, or 60s and improve your mouse speed.",
     url: "https://cpschecker.site/cps-test",
-    image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "cps test, click speed test, clicks per second, cps checker"
+    image: "https://cpschecker.site/assets/cps-score-og.png",
+    keywords: "click per second test in seonds, cps test, click speed test, clicks per second, cps checker, clicking speed test, click speed test 10 seconds, click speed test 30 seconds, click speed test 60 seconds, free cps test, online cps test, cps tester, cps test 1 second, cps test 5 seconds, cps test 10 seconds, cps test 30 seconds, cps test 60 seconds, improve cps, cps games, click speed test online, free online click per second test"
   });
 
   useEffect(() => {
@@ -130,11 +131,14 @@ export default function CPSTest() {
         <div className="mx-auto max-w-4xl">
           <div className="mb-8 text-center">
             <h1 className="mb-4 text-3xl font-black md:text-4xl">
-              <span className="gradient-text">CPS Test</span> - Click Speed Test
+              <span className="gradient-text">CPS Test</span> - Measure Your Click Speed (Clicks Per Second)
             </h1>
             <p className="text-muted-foreground">
-              Measure your clicks per second. Click the area below to start the test.
+              The CPS Test (Clicks Per Second Test) measures how fast you can click your mouse.
+              CPS Checker helps gamers and professionals test click speed using accurate timers
+              across 1, 5, 10, 30, and 60 second durations.
             </p>
+
           </div>
 
           {/* Duration Selector */}
