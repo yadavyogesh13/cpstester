@@ -6,26 +6,9 @@ import { useTestHistory } from "@/hooks/useLocalStorage";
 import { useJsonLd } from "@/hooks/useJsonLd";
 import { useSeo } from "@/hooks/useSeo";
 import { Keyboard, RotateCcw, Trophy, Clock, Target, Zap, Type } from "lucide-react";
+import { SAMPLE_TEXTS } from "@/typingSampleText/sampleText";
 
-const SAMPLE_TEXTS = [
-  "The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once. Typing practice helps improve speed and accuracy over time.",
-  "Programming is the art of telling a computer what to do. Every line of code represents a small step toward solving a larger problem. Practice makes perfect in coding.",
-  "Gaming requires quick reflexes and precise movements. Professional players train for hours each day to maintain their competitive edge in tournaments around the world.",
-  "Technology advances rapidly, changing how we work and live. Staying updated with the latest developments is essential for success in the modern digital economy.",
-  "Words flow like water through a river, carrying meaning from mind to mind. The art of communication shapes our understanding of the world around us.",
-  "In the heart of the city, skyscrapers reach for the sky, symbolizing human ambition and innovation. The urban landscape is a testament to our collective progress.",
-  "Nature's beauty is a source of inspiration and tranquility. From towering mountains to serene lakes, the natural world offers endless opportunities for exploration and reflection.",
-  "Music is a universal language that transcends borders and cultures. It has the power to evoke emotions, tell stories, and bring people together in harmony.",
-  "Education is the key to unlocking potential and opening doors to new opportunities. Lifelong learning empowers individuals to adapt and thrive in an ever-changing world.",
-  "Artistic expression allows us to explore our creativity and share our unique perspectives. Through various mediums, artists communicate ideas and emotions that resonate with others.",
-  "Healthy living involves a balanced diet, regular exercise, and mental well-being. Taking care of our bodies and minds is essential for a fulfilling life.",
-  "Traveling broadens our horizons and exposes us to diverse cultures and experiences. Exploring new places enriches our understanding of the world and ourselves.",
-  "Innovation drives progress in every field, from science and technology to business and the arts. Embracing change and thinking creatively leads to breakthroughs that shape our future.",
-  "Teamwork is essential for achieving common goals. Collaboration and effective communication foster a positive environment where ideas can flourish and challenges can be overcome together.",
-  "History teaches us valuable lessons about the past, helping us understand the present and shape the future. Studying historical events provides insight into human behavior and societal development."
-];
-
-const DURATIONS = [30, 60, 120];
+const DURATIONS = [10, 30, 60, 120];
 
 type TestState = "idle" | "running" | "finished";
 
@@ -72,12 +55,13 @@ export default function TypingTest() {
     keywords:"typing test, typing speed test, wpm test, typing accuracy test, free typing test, online typing test, english typing test, typing practice, typing skills test, typing game, typing challenge, typing trainer, typing tutor, keyboard typing test, typing speed measurement, improve typing speed, typing performance test"
   });
 
-  const getRandomText = () => {
-    return SAMPLE_TEXTS[Math.floor(Math.random() * SAMPLE_TEXTS.length)];
+  const getRandomText = (time) => {
+    const texts = SAMPLE_TEXTS[time] || [];
+    return texts[Math.floor(Math.random() * texts.length)];
   };
 
   useEffect(() => {
-    setSampleText(getRandomText());
+    setSampleText(getRandomText(duration));
     setTimeLeft(duration);
   }, [duration]);
 
@@ -122,7 +106,7 @@ export default function TypingTest() {
     setTypedText("");
     setTimeLeft(duration);
     setStats({ wpm: 0, cpm: 0, accuracy: 0, errors: 0 });
-    setSampleText(getRandomText());
+    setSampleText(getRandomText(duration));
   }, [duration]);
 
   useEffect(() => {

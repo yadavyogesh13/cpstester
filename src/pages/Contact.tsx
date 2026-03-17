@@ -1,111 +1,166 @@
 import { Layout } from "@/components/layout/Layout";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Clock, Send } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
+import { useState } from "react";
 
 export default function Contact() {
   useSeo({
     title: "Contact – CPS Checker",
-    description: "Contact the CPS Checker team for feedback, bug reports, and partnership inquiries. We're happy to help.",
+    description:
+      "Contact the CPS Checker team for feedback, bug reports, and partnership inquiries.",
     url: "https://cpschecker.site/contact",
     image: "https://cpschecker.site/cps-score-og.png",
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <Layout>
       <div className="container py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
+
           {/* Breadcrumb */}
-          <nav className="mb-6 text-sm" aria-label="Breadcrumb">
+          <nav className="mb-6 text-sm">
             <ol className="flex items-center gap-2">
-              <li><a href="/" className="text-muted-foreground hover:text-primary">Home</a></li>
+              <li>
+                <a href="/" className="text-muted-foreground hover:text-primary">
+                  Home
+                </a>
+              </li>
               <li className="text-muted-foreground">/</li>
               <li className="text-foreground font-medium">Contact</li>
             </ol>
           </nav>
 
-          <h1 className="mb-8 text-4xl font-black">
-            <span className="gradient-text">Contact</span> Us
+          {/* Heading */}
+          <h1 className="mb-6 text-4xl font-black text-foreground">
+            <span className="text-primary">Contact</span> Us
           </h1>
 
-          <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
-            <p className="text-xl leading-relaxed">
-              We'd love to hear from you! Whether you have feedback, suggestions, questions, or just want 
-              to say hello, don't hesitate to reach out. Our team is dedicated to providing the best 
-              experience possible.
-            </p>
+          {/* Intro */}
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            We'd love to hear from you! Send us your feedback, questions, or ideas.
+          </p>
 
-            <div className="grid gap-6 py-8 md:grid-cols-2">
-              <div className="rounded-xl border border-border/50 bg-card p-6">
-                <Mail className="mb-4 h-8 w-8 text-primary" />
-                <h3 className="mb-2 text-lg font-bold text-foreground">Email Us</h3>
-                <p className="mb-4 text-sm">
-                  Send us an email and we'll get back to you as soon as possible.
-                </p>
-                <a 
-                  href="mailto:yadavyogesh0913@gmail.com" 
-                  className="text-primary hover:underline font-medium"
-                >
-                  yadavyogesh0913@gmail.com
-                </a>
-              </div>
-              <div className="rounded-xl border border-border/50 bg-card p-6">
-                <Clock className="mb-4 h-8 w-8 text-primary" />
-                <h3 className="mb-2 text-lg font-bold text-foreground">Response Time</h3>
-                <p className="text-sm">
-                  We typically respond to all inquiries within 24-48 hours during business days. 
-                  Thank you for your patience.
-                </p>
-              </div>
-            </div>
-
-            <h2 className="text-2xl font-bold text-foreground">Get in Touch</h2>
-            <p>
-              We welcome all types of feedback and inquiries:
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li><strong>Feature Requests:</strong> Have an idea for a new test or feature? We'd love to hear it!</li>
-              <li><strong>Bug Reports:</strong> Found something not working correctly? Please let us know so we can fix it.</li>
-              <li><strong>General Feedback:</strong> Tell us what you like or what could be improved.</li>
-              <li><strong>Partnership Inquiries:</strong> Interested in collaborating? Reach out!</li>
-              <li><strong>Press & Media:</strong> For press inquiries, please include "PRESS" in your subject line.</li>
-            </ul>
-
-            <div className="mt-8 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center">
-              <MessageSquare className="mx-auto mb-4 h-12 w-12 text-primary" />
-              <h3 className="mb-4 text-xl font-bold text-foreground">Send Us a Message</h3>
-              <p className="mb-6 text-sm">
-                Click the button below to compose an email to our team.
+          {/* Info Cards */}
+          <div className="grid gap-6 md:grid-cols-2 mb-10">
+            <div className="rounded-xl border border-border bg-card p-6">
+              <Mail className="mb-4 h-8 w-8 text-primary" />
+              <h3 className="font-bold text-lg text-foreground mb-2">Email Us</h3>
+              <p className="text-sm text-muted-foreground mb-2">
+                Send us an email anytime:
               </p>
-              <Button variant="hero" asChild>
-                <a href="mailto:yadavyogesh0913@gmail.com?subject=cpschecker.site%20Inquiry">
-                  <Send className="mr-2 h-5 w-5" />
-                  Send Email
-                </a>
-              </Button>
+              <a
+                href="mailto:yadavyogesh0913@gmail.com"
+                className="text-primary font-medium break-all"
+              >
+                yadavyogesh0913@gmail.com
+              </a>
             </div>
 
-            <h2 className="text-2xl font-bold text-foreground">Before You Contact Us</h2>
-            <p>
-              To help us serve you better, please consider the following when reaching out:
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>Check if your question is answered in our FAQ section</li>
-              <li>Include as much detail as possible about any issues you're experiencing</li>
-              <li>Let us know which browser and device you're using if reporting a bug</li>
-              <li>Use a clear and descriptive subject line for faster response</li>
-            </ul>
-
-            <p className="mt-8 text-center text-sm">
-              Thank you for using cpschecker.site. We appreciate your support and feedback!
-            </p>
+            <div className="rounded-xl border border-border bg-card p-6">
+              <Clock className="mb-4 h-8 w-8 text-primary" />
+              <h3 className="font-bold text-lg text-foreground mb-2">
+                Response Time
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                We usually reply within 24–48 hours.
+              </p>
+            </div>
           </div>
 
-          {/* Ad Space */}
-          {/* <div className="mt-12 flex justify-center">
-            <AdPlaceholder size="rectangle" />
-          </div> */}
+          {/* FORM */}
+          <div className="rounded-xl border border-primary/20 bg-background p-8 shadow-sm">
+            <MessageSquare className="mx-auto mb-4 h-12 w-12 text-primary" />
+
+            <h3 className="text-xl font-bold text-center text-foreground mb-6">
+              Send Us a Message
+            </h3>
+
+            {submitted && (
+              <p className="text-green-600 text-center mb-4 font-medium">
+                ✅ Message sent successfully!
+              </p>
+            )}
+
+            <form
+              action="https://formspree.io/f/mldwawgn"
+              method="POST"
+              onSubmit={() => setSubmitted(true)}
+              className="space-y-5"
+            >
+              {/* Name */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Enter your name"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Enter your email"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              {/* Subject */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Enter subject"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Write your message..."
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                ></textarea>
+              </div>
+
+              {/* Spam Protection */}
+              <input type="text" name="_gotcha" style={{ display: "none" }} />
+
+              {/* Submit */}
+              <Button type="submit" className="w-full text-base font-semibold">
+                <Send className="mr-2 h-5 w-5" />
+                Send Message
+              </Button>
+            </form>
+          </div>
+
+          {/* Footer Note */}
+          <p className="mt-10 text-center text-sm text-muted-foreground">
+            Thank you for using cpschecker.site ❤️
+          </p>
+
         </div>
       </div>
     </Layout>
