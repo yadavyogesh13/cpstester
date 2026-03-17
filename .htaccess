@@ -1,11 +1,15 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Redirect non-www to www
+  RewriteCond %{HTTP_HOST} ^cpschecker\.site [NC]
+  RewriteRule ^(.*)$ https://www.cpschecker.site/$1 [L,R=301]
+
   # Do NOT rewrite real files or folders
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Rewrite everything else to index.html
+  # Rewrite everything else to index.html (SPA routing)
   RewriteRule ^ index.html [L]
 </IfModule>

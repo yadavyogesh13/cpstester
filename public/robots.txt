@@ -22,4 +22,4 @@ Disallow: /*?*filter=
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://cpschecker.site/sitemap.xml
+Sitemap: https://www.cpschecker.site/sitemap.xml
