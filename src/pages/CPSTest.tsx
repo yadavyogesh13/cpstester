@@ -46,11 +46,14 @@ export default function CPSTest() {
   // Page-level SEO meta tags
   useSeo({
     title: "CPS Test (Clicks Per Second) – Free Click Speed Test | CPS Checker",
-    // description: "Measure clicks per second with our accurate CPS Test. Choose different durations and improve your clicking speed.",
     description: "Test your clicking speed with our free CPS Test. Measure clicks per second in 1s, 5s, 10s, 30s, or 60s and improve your mouse speed.",
     url: "https://cpschecker.site/cps-test",
     image: "https://cpschecker.site/assets/cps-score-og.png",
-    keywords: "click per second test in seonds, cps test, click speed test, clicks per second, cps checker, clicking speed test, click speed test 10 seconds, click speed test 30 seconds, click speed test 60 seconds, free cps test, online cps test, cps tester, cps test 1 second, cps test 5 seconds, cps test 10 seconds, cps test 30 seconds, cps test 60 seconds, improve cps, cps games, click speed test online, free online click per second test"
+    keywords: "click per second test, cps test, click speed test, clicks per second, cps checker, clicking speed test, improve cps",
+    type: "WebPage",
+    locale: "en_US",
+    twitterCard: "summary_large_image",
+    author: "CPS Checker"
   });
 
   useEffect(() => {
@@ -256,38 +259,142 @@ export default function CPSTest() {
           </div> */}
 
           {/* Content Section */}
-          <section className="mt-12">
-            <h2 className="mb-4 text-2xl font-bold">How to Use the CPS Test</h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                The CPS (Clicks Per Second) test measures how fast you can click your mouse button. 
-                Simply select your preferred test duration, click the test area to begin, and click 
-                as fast as you can until the timer runs out.
-              </p>
-              <h3 className="text-lg font-semibold text-foreground">CPS Checker Rankings</h3>
-              <ul className="grid gap-2 md:grid-cols-2">
-                <li className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-muted-foreground"></span>
-                  <span>1-5 CPS: Beginner</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-accent"></span>
-                  <span>6-7 CPS: Average</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-primary"></span>
-                  <span>8-10 CPS: Advanced</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-purple-500"></span>
-                  <span>11-13 CPS: Expert</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-yellow-500"></span>
-                  <span>14+ CPS: Legendary</span>
-                </li>
-              </ul>
-            </div>
+          <section className="mt-12 space-y-10">
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">What is CPS (Clicks Per Second)?</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  CPS is an easy way to measure how fast your fingers work with a mouse. It is simply how many times you can press the click button in one second, and it’s a great way to tune your hand speed for games like Minecraft, FPS titles, or any fast-action hobby.
+                </p>
+                <p>
+                  Imagine you are playing a quick Minecraft PvP match. If you can click 10 times in one second, that’s 10 CPS. If your opponent is at 7 CPS, you have a big edge in burst damage. Here we turn that same idea into a safe, controlled test so you can track progress and avoid noisy estimates from random games.
+                </p>
+                <p>
+                  If you are a complete novice, 4-6 CPS is normal. If you’ve done this before and have good form, 8-12 CPS is a solid target. For people who practice consistently, 14+ CPS is the place where you genuinely feel speed improvements on the keyboard and mouse.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">How to Use the CPS Tool (Step-by-Step)</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  We built this page so the flow is simple and reliable. Whether this is your first test or your hundredth, you’ll know exactly what to do.
+                </p>
+                <ol className="list-decimal space-y-3 pl-6">
+                  <li>
+                    <strong>Choose your duration:</strong> Pick 1, 5, 10, 30, or 60 seconds. Shorter tests are great for quick practice; longer tests are better for seeing consistency.
+                  </li>
+                  <li>
+                    <strong>Get your hand ready:</strong> Put your mouse in a comfortable position, relax your arm, and keep your wrist straight. If you can, do a couple of easy warm-up clicks first.
+                  </li>
+                  <li>
+                    <strong>Click the test area:</strong> Tap once and the timer starts. Then tap as fast as you can while staying controlled.
+                  </li>
+                  <li>
+                    <strong>Watch the timer:</strong> A 30-second countdown is on the screen. If you are in the 60-second mode, think of it as a sprint with an endurance finish.
+                  </li>
+                  <li>
+                    <strong>Finish and read your score:</strong> When time is up, your CPS appears together with your total clicks and rating (Beginner, Average, Advanced, Expert, Legendary).
+                  </li>
+                  <li>
+                    <strong>Save your best score:</strong> We store your highest CPS for this device. Try to beat your record each time and note what helped that day.
+                  </li>
+                  <li>
+                    <strong>Repeat with purpose:</strong> Do 3 rounds, take notes on hand position, and adjust if your score varies a lot. This is where real improvement comes from.
+                  </li>
+                </ol>
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">Noisy Data, Fast Wins, and Real Progress</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Your score will jump around from attempt to attempt, and that is okay. A single test might be unusually high or low, so track a short series to find your true baseline. We have the history feature to help you do exactly that.
+                </p>
+                <p>
+                  Pro tip: use the same setup for each session (same chair, desk, mouse settings). If you swap mouse or keyboard, your movement patterns reset. Consistency makes it easier to see real progress, not just small daily noise.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">Friendly CPS Ratings (What Your Score Means)</h2>
+              <div className="grid gap-3 md:grid-cols-2">
+                {[
+                  { label: "1-5 CPS", detail: "Good place to start, practice focus on comfort and rhythm." },
+                  { label: "6-7 CPS", detail: "Solid speed for casual play. You’re building a good base." },
+                  { label: "8-10 CPS", detail: "Advanced player range. Keep consistency and prevent fatigue." },
+                  { label: "11-13 CPS", detail: "Expert speed. This is where training starts paying off in games." },
+                  { label: "14+ CPS", detail: "Legendary club. You’re moving faster than most people in your environment." }
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg border border-border/50 bg-muted/20 p-5">
+                    <p className="font-semibold text-primary">{item.label}</p>
+                    <p className="text-sm text-muted-foreground">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">Tips That Actually Work to Improve Your CPS</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <ul className="list-disc space-y-3 pl-6">
+                  <li><strong>Warm up first:</strong> Start with 10 seconds at a comfortable pace before pushing your max score. A warm hand is usually 1-2 CPS better than a cold hand.</li>
+                  <li><strong>Find your clicking style:</strong> Try regular clicks, jitter, butterfly, and even middle-finger style. Use the one that feels least tiring while still fast.</li>
+                  <li><strong>Adjust settings:</strong> Make sure mouse sensitivity (DPI) and OS click settings are smooth. A cheap mouse can sometimes feel sluggish; a responsive model makes a difference.</li>
+                  <li><strong>Stay relaxed:</strong> If your wrist is tense, your speed drops fast. Keep your arm loose and use brief bursts of intense clicks followed by a short break.</li>
+                  <li><strong>Rest your hands:</strong> After 2-3 tests, take a 1-2 minute break and shake out your fingers. This keeps your muscles responsive on the next attempt.</li>
+                  <li><strong>Compare results:</strong> Use our <a href="/guides/cps" className="text-primary hover:underline">CPS guide</a> and <a href="/blog" className="text-primary hover:underline">blog</a> for extra drills and technique experiments.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">Common Mistakes People Make</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li><strong>Rushing the first 5 seconds:</strong> You often get shaky. Build into your top speed.</li>
+                  <li><strong>Using a different mouse each time:</strong> Keep it consistent during training phases.</li>
+                  <li><strong>Ignoring posture:</strong> Leaning forward damages throughput; hands cramp faster.</li>
+                  <li><strong>Skipping the cooldown:</strong> Long sessions without breaks cause strain and lower long-term progress.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">A Simple Weekly Practice Plan</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  If you want something practical, follow this weekly plan and notice the difference over two weeks.
+                </p>
+                <ul className="list-disc space-y-3 pl-6">
+                  <li><strong>Day 1:</strong> 3 rounds 10s + 3 rounds 30s. Record your best and average CPS.</li>
+                  <li><strong>Day 2:</strong> 5 rounds 10s with a slow warm-up first, then 2 rounds 60s for stamina.</li>
+                  <li><strong>Day 3:</strong> Light rest, watch a quick guide video (or read <a href="/guides/cps" className="text-primary hover:underline">our CPS guide</a>).</li>
+                  <li><strong>Day 4:</strong> Work on your weakest point (if consistency is low, do more 30s rounds).</li>
+                  <li><strong>Day 5:</strong> “Challenge day”: try to beat your personal best, then note what felt different.</li>
+                  <li><strong>Day 6:</strong> Recovery day with 1-2 gentle practice sessions, focus on form not speed.</li>
+                  <li><strong>Day 7:</strong> Reflect and plan next week. Write down one small improvement to try next time.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article>
+              <h2 className="mb-4 text-2xl font-bold">Final Thoughts</h2>
+              <div className="space-y-3 text-muted-foreground">
+                <p>
+                  Think of this as training your hand reflexes, not just smashing the mouse. Small, consistent steps usually win over short bursts of random effort.
+                </p>
+                <p>
+                  Check the <a href="/faq" className="text-primary hover:underline">FAQ page</a> for quick answers, the <a href="/blog" className="text-primary hover:underline">blog</a> for long-form tips, and the <a href="/guides/cps" className="text-primary hover:underline">CPS guide</a> if you want an advanced routine.
+                </p>
+                <p>
+                  Have fun with it, and don’t forget to reward yourself when you hit a new personal best. Click smart, stay safe, and keep improving.
+                </p>
+              </div>
+            </article>
           </section>
         </div>
       </div>

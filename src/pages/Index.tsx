@@ -13,7 +13,8 @@ import {
   TrendingUp,
   Clock,
   Award,
-  BarChart3
+  BarChart3,
+  ArrowRight
 } from "lucide-react";
 
 const tools = [
@@ -71,7 +72,32 @@ const features = [
 ];
 
 export default function Index() {
-  // Add FAQPage schema for SEO
+  // Add WebSite and FAQPage schema for SEO
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CPS Checker",
+    "url": "https://cpschecker.site",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://cpschecker.site/search?q={query}",
+      "query-input": "required name=query"
+    }
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cpschecker.site/"
+      }
+    ]
+  });
+
   useJsonLd({
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -130,9 +156,9 @@ export default function Index() {
               <span className="gradient-text">Reflexes</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              The most accurate online tools for measuring clicks per second, typing speed, 
-              and reaction time. Improve your gaming performance with real-time feedback 
-              and detailed statistics.
+              We built CPS Checker for people who want a quick, honest snapshot of how fast their hands really are.
+              No sign-up, no gimmicks—just real tools for mouse clicks, typing pace, and reaction timing.
+              It’s like a friendly training partner that’s always available.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" asChild>
@@ -147,6 +173,25 @@ export default function Index() {
                   Typing Test
                 </Link>
               </Button>
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              If you prefer guided practice, check our <a href="/guides/cps" className="text-primary hover:underline">CPS guide</a>, <a href="/guides/typing" className="text-primary hover:underline">Typing guide</a>, and <a href="/guides/reaction" className="text-primary hover:underline">Reaction guide</a>.
+            </p>
+            
+            {/* Quick Stats */}
+            <div className="mt-12 grid grid-cols-3 gap-4 rounded-xl border border-border/50 bg-background/50 p-6 backdrop-blur-sm">
+              <div>
+                <div className="text-2xl font-bold text-primary">15+</div>
+                <div className="text-xs text-muted-foreground">Years Combined Experience</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">100%</div>
+                <div className="text-xs text-muted-foreground">Free & No Registration</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">4</div>
+                <div className="text-xs text-muted-foreground">Speed Testing Tools</div>
+              </div>
             </div>
           </div>
         </div>
@@ -207,7 +252,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
               <div key={feature.title} className="text-center">
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
@@ -216,6 +261,73 @@ export default function Index() {
                 <h3 className="mb-2 font-bold">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
               </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl border border-primary/20  p-8 shadow-sm">
+            <h3 className="mb-4 text-2xl font-bold text-foreground">Free Tips to Improve Your CPS, SPS, and Reaction</h3>
+            <ul className="list-decimal space-y-2 pl-6 text-muted-foreground">
+              <li>Warm up with 3–5 rounds of low-duration tests (1s, 5s) before aiming for a record.</li>
+              <li>Use consistent hand position and try different clicking methods (regular, jitter, butterfly).</li>
+              <li>Take short breaks every 3–5 minutes to avoid fatigue and keep accuracy high.</li>
+              <li>Compare your scores on multiple devices to find the best mouse and keyboard settings.</li>
+              <li>Track your progress in history and repeat the same test to measure improvement.</li>
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground">Add these techniques to your routing and game training for faster results.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Guides Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold">Comprehensive Guides</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              Learn How to Master Each Test With Our Detailed Guides and Training Methods
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "CPS Test Guide",
+                desc: "Learn benchmarks, techniques, and training methods to improve your clicking speed.",
+                icon: MousePointerClick,
+                link: "/guides/cps"
+              },
+              {
+                title: "Typing Guide",
+                desc: "Master WPM, CPM, and accuracy with our comprehensive typing speed guide.",
+                icon: Keyboard,
+                link: "/guides/typing"
+              },
+              {
+                title: "Spacebar Guide",
+                desc: "Discover spacebar clicking techniques and training programs.",
+                icon: Space,
+                link: "/guides/spacebar"
+              },
+              {
+                title: "Reaction Guide",
+                desc: "Improve your reflexes with scientific training methods and techniques.",
+                icon: Zap,
+                link: "/guides/reaction"
+              }
+            ].map((guide, idx) => (
+              <Link key={idx} to={guide.link} className="group">
+                <div className="relative h-full rounded-xl border border-border/50 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-md">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <guide.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mb-2 font-bold group-hover:text-primary transition-colors">{guide.title}</h3>
+                  <p className="text-sm text-muted-foreground">{guide.desc}</p>
+                  <div className="mt-4 flex items-center text-xs font-medium text-primary">
+                    Read Guide
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -253,6 +365,51 @@ export default function Index() {
                 accuracy. The average typing speed is around 40 WPM, while professional typists 
                 often exceed 80 WPM.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="border-y border-border/50 bg-muted/30 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-12 text-center text-3xl font-bold">Frequently Asked Questions</h2>
+            
+            <div className="space-y-6">
+              {[
+                {
+                  q: "What is CPS and why does it matter?",
+                  a: "CPS stands for Clicks Per Second. It measures how many times you can click your mouse in one second. It matters because it's a key metric for gamers, especially in competitive gaming where clicking speed can determine victory or defeat."
+                },
+                {
+                  q: "How can I improve my typing speed?",
+                  a: "Improve typing speed through consistent daily practice (20-30 minutes), focusing on accuracy first, using proper finger positioning, taking regular breaks, and using online typing tools like our Typing Test to track progress. Most people see improvement of 10-20 WPM within 8 weeks of consistent practice."
+                },
+                {
+                  q: "What's the average reaction time?",
+                  a: "The average untrained reaction time is 200-250 milliseconds. Trained individuals can achieve 150-200ms, athletes 100-150ms, and elite professionals under 100ms. Reaction time can be improved through consistent practice with reaction time tests."
+                },
+                {
+                  q: "Is spacebar clicking bad for your hands?",
+                  a: "Spacebar clicking itself isn't harmful if done with proper technique and reasonable duration. The risks come from poor posture, excessive force, extended sessions without breaks, and incorrect technique. Take breaks, maintain good posture, warm up properly, and stop if you experience pain."
+                },
+                {
+                  q: "Do you track my personal data?",
+                  a: "No. All tests and scores are stored locally on your device. We don't collect personal information, track users, or send data to external servers. Your privacy is our priority."
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="rounded-lg border border-border/50 bg-card p-6">
+                  <h3 className="mb-3 font-bold text-lg">{faq.q}</h3>
+                  <p className="text-muted-foreground">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <Link to="/faq">
+                <Button variant="outline">View All FAQs</Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ const navLinks = [
   { path: "/typing-test", label: "Typing Test" },
   { path: "/spacebar-test", label: "Spacebar" },
   { path: "/reaction-test", label: "Reaction" },
+  { path: "/blog", label: "Blog" },
+  { path: "/faq", label: "FAQ" },
   { path: "/about", label: "About" },
 ];
 

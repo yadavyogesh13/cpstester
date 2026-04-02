@@ -14,6 +14,13 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Disclaimer from "./pages/Disclaimer";
+import FAQ from "./pages/FAQ";
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
+import CPSGuide from "./pages/guides/CPSGuide";
+import TypingGuide from "./pages/guides/TypingGuide";
+import SpacebarGuide from "./pages/guides/SpacebarGuide";
+import ReactionGuide from "./pages/guides/ReactionGuide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,11 +39,26 @@ function AppContent() {
         <Route path="/typing-test" element={<TypingTest />} />
         <Route path="/spacebar-test" element={<SpacebarTest />} />
         <Route path="/reaction-test" element={<ReactionTest />} />
+        
+        {/* Guide Routes */}
+        <Route path="/guides/cps" element={<CPSGuide />} />
+        <Route path="/guides/typing" element={<TypingGuide />} />
+        <Route path="/guides/spacebar" element={<SpacebarGuide />} />
+        <Route path="/guides/reaction" element={<ReactionGuide />} />
+        
+        {/* Blog Routes */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogArticle />} />
+        
+        {/* Info Routes */}
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
+        
+        {/* 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
