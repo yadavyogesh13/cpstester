@@ -46,6 +46,38 @@ export default function TypingTest() {
     }
   });
 
+  // FAQ Schema for rich snippets
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does WPM mean in typing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WPM (Words Per Minute) is a measure of typing speed. It counts the number of words you can type in one minute, typically used to assess typing proficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good typing speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Average typing speed for adults is 40 WPM, experienced typists reach 60-80 WPM, and professional typists often exceed 100 WPM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve my typing speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Practice regularly with typing exercises, maintain proper posture, use correct finger placement, minimize looking at the keyboard, and take breaks to avoid fatigue."
+        }
+      }
+    ]
+  });
+
   // Page-level SEO meta tags
   useSeo({
     title: "Typing Test – Free WPM & Typing Speed Test With Accuracy | CPS Checker",
