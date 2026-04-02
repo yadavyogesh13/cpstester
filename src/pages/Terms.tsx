@@ -1,6 +1,29 @@
 import { Layout } from "@/components/layout/Layout";
+import { useSeo } from "@/hooks/useSeo";
+import { useJsonLd } from "@/hooks/useJsonLd";
 
 export default function Terms() {
+  useSeo({
+    title: "Terms of Service – CPS Checker | Legal Terms & Conditions",
+    description: "Review our terms of service for CPS Checker. Learn about usage rights, disclaimers, limitations, and legal information about our online testing tools.",
+    url: "https://cpschecker.site/terms",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "terms of service, terms and conditions, legal terms, user agreement"
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms of Service",
+    "description": "Terms of service and conditions for using CPS Checker",
+    "url": "https://cpschecker.site/terms",
+    "creator": {
+      "@type": "Organization",
+      "name": "CPS Checker",
+      "url": "https://cpschecker.site"
+    }
+  });
+
   return (
     <Layout>
       <div className="container py-12 md:py-16">

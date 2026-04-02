@@ -2,15 +2,30 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Clock, Send } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
+import { useJsonLd } from "@/hooks/useJsonLd";
 import { useState } from "react";
 
 export default function Contact() {
   useSeo({
-    title: "Contact – CPS Checker",
-    description:
-      "Contact the CPS Checker team for feedback, bug reports, and partnership inquiries.",
+    title: "Contact CPS Checker – Feedback, Support & Partnerships",
+    description: "Get in touch with CPS Checker team for feedback, bug reports, suggestions, and partnership inquiries. We respond within 24-48 hours.",
     url: "https://cpschecker.site/contact",
     image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "contact us, customer support, feedback, bug report"
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact CPS Checker",
+    "description": "Contact form and support information for CPS Checker",
+    "url": "https://cpschecker.site/contact",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "yadavyogesh0913@gmail.com",
+      "availableLanguage": "en"
+    }
   });
 
   const [submitted, setSubmitted] = useState(false);
