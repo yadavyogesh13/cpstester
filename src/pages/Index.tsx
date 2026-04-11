@@ -139,11 +139,11 @@ export default function Index() {
 
   // Page-level SEO meta tags
   useSeo({
-    title: "CPS Checker – Free Online CPS, Typing & Reaction Tests",
-    description: "CPS Checker offers free, accurate online tools for measuring clicks per second, typing speed, spacebar speed, and reaction time. Improve your skills with real-time feedback.",
+    title: "CPS Checker – Free Online Click Speed Test, Reaction Time, Typing & Spacebar Tools",
+    description: "CPS Checker is a free online click speed test platform with CPS tests, spacebar speed tests, reaction time tests, and typing tests. Measure your clicks per second, improve reflexes, and track your progress.",
     url: "https://cpschecker.site/",
     image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "cps checker, cps test, typing test, reaction test, spacebar test"
+    keywords: "cps checker, click speed test, cps test, clicks per second, spacebar speed test, reaction time test, typing test, free online speed test"
   });
   return (
     <Layout>

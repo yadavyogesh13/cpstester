@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { SITE_URL, DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_IMAGE } from "@/lib/seo";
+import { SITE_URL, DEFAULT_TITLE, DEFAULT_DESCRIPTION, DEFAULT_IMAGE, DEFAULT_KEYWORDS } from "@/lib/seo";
 
 type SEOOptions = {
   title?: string;
@@ -38,7 +38,7 @@ export function useSeo(options: SEOOptions = {}) {
 
     // Basic meta
     setOrCreateMeta({ name: "description" }, description);
-    if (options.keywords) setOrCreateMeta({ name: "keywords" }, options.keywords);
+    setOrCreateMeta({ name: "keywords" }, options.keywords || DEFAULT_KEYWORDS);
     setOrCreateMeta({ name: "robots" }, options.noindex ? "noindex, nofollow" : "index, follow" );
 
     // Canonical

@@ -45,11 +45,11 @@ export default function CPSTest() {
 
   // Page-level SEO meta tags
   useSeo({
-    title: "CPS Test (Clicks Per Second) – Free Click Speed Test | CPS Checker",
-    description: "Test your clicking speed with our free CPS Test. Measure clicks per second in 1s, 5s, 10s, 30s, or 60s and improve your mouse speed.",
+    title: "CPS Test (Clicks Per Second) – Free Online Click Speed Test | CPS Checker",
+    description: "Measure your clicks per second with a free online CPS Test. Compare CPS scores, improve clicking speed, and train with 1s, 5s, 10s, 30s, or 60s durations.",
     url: "https://cpschecker.site/cps-test",
     image: "https://cpschecker.site/assets/cps-score-og.png",
-    keywords: "click per second test, cps test, click speed test, clicks per second, cps checker, clicking speed test, improve cps",
+    keywords: "free online cps test, cps checker, click speed test, clicks per second, click speed challenge, online cps checker, improve cps",
     type: "WebPage",
     locale: "en_US",
     twitterCard: "summary_large_image",
