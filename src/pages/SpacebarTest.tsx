@@ -42,21 +42,46 @@ export default function SpacebarTest() {
     }
   });
 
+  // FAQ Schema for rich snippets
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SPS in spacebar test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SPS (Spacebar Presses Per Second) measures how many times you can press the spacebar in one second. It's used to test endurance and finger speed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's a good spacebar speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Average spacebar speed is 6-8 SPS for regular users, experienced users achieve 10-12 SPS, and advanced users can reach 15+ SPS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve my spacebar speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Practice regularly, maintain proper posture, use your thumb or alternate fingers, and avoid tension. Take breaks between sessions to maintain finger agility."
+        }
+      }
+    ]
+  });
+
   // Page-level SEO meta tags
   useSeo({
 <<<<<<< Updated upstream
     title: "Spacebar Test – Spacebar Clicking Speed | CPS Checker",
-    description: "Test your spacebar clicking speed and endurance. Press SPACE or click to start and track your SPS.",
+    description: "Test your spacebar clicking speed and endurance. Press SPACE or click to start and track your SPS. Free spacebar speed test online.",
     url: "https://cpschecker.site/spacebar-test",
     image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "spacebar test, spacebar speed, sps test"
-=======
-    title: "Spacebar Test – Free Spacebar Clicking Speed & SPS Test | CPS Checker",
-    description: "Find your spacebar clicking speed with a free online SPS test. Record your spacebar presses per second, improve your rhythm, and train faster finger speed.",
-    url: "https://cpschecker.site/spacebar-test",
-    image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "free spacebar test, spacebar speed test, sps test, spacebar clicker, spacebar clicking speed, online spacebar test"
->>>>>>> Stashed changes
+    keywords: "spacebar test, spacebar speed, sps test, spacebar clicker, spacebar clicking, spacebar speed test"
   });
 
   const bestScore = getBestScore("spacebar");

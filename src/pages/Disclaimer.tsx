@@ -1,6 +1,29 @@
 import { Layout } from "@/components/layout/Layout";
+import { useSeo } from "@/hooks/useSeo";
+import { useJsonLd } from "@/hooks/useJsonLd";
 
 export default function Disclaimer() {
+  useSeo({
+    title: "Disclaimer – CPS Checker | Important Legal Notice",
+    description: "Read our disclaimer for CPS Checker testing tools. Understand that test results are for personal use only and not professional measurements.",
+    url: "https://cpschecker.site/disclaimer",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "disclaimer, legal disclaimer, test results disclaimer, liability"
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Disclaimer",
+    "description": "Legal disclaimer for CPS Checker and its testing tools",
+    "url": "https://cpschecker.site/disclaimer",
+    "creator": {
+      "@type": "Organization",
+      "name": "CPS Checker",
+      "url": "https://cpschecker.site"
+    }
+  });
+
   return (
     <Layout>
       <div className="container py-12 md:py-16">

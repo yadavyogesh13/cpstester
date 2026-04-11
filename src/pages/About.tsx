@@ -2,13 +2,48 @@ import { Layout } from "@/components/layout/Layout";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { Target, Users, Zap, Shield, Heart, Award } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
+import { useJsonLd } from "@/hooks/useJsonLd";
 
 export default function About() {
   useSeo({
-    title: "About – CPS Checker",
-    description: "Learn about cpschecker.site — mission, privacy, and the tools we offer. Accurate and privacy-first speed testing for everyone.",
+    title: "About CPS Checker – Free Online Speed Testing Tools & Mission",
+    description: "Learn about CPS Checker's mission to provide free, accurate speed testing tools for gamers, typists, and professionals. Privacy-first, no login required.",
     url: "https://cpschecker.site/about",
     image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "about us, CPS Checker, speed testing tools, free online tests, gaming tools"
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About CPS Checker",
+    "description": "Learn about our mission to provide accurate, free speed testing tools",
+    "url": "https://cpschecker.site/about",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CPS Checker",
+      "url": "https://cpschecker.site",
+      "logo": "https://cpschecker.site/logo.png"
+    }
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CPS Checker",
+    "url": "https://cpschecker.site",
+    "logo": "https://cpschecker.site/logo.png",
+    "description": "Free online speed testing tools for CPS, typing, spacebar, and reaction time",
+    "sameAs": [
+      "https://twitter.com/cpschecker",
+      "https://instagram.com/cpschecker"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "",
+      "contactType": "Customer Support",
+      "email": "yadavyogesh0913@gmail.com"
+    }
   });
 
   return (

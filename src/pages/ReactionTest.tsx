@@ -37,21 +37,48 @@ export default function ReactionTest() {
     }
   });
 
+  // FAQ Schema for rich snippets
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good reaction time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Average human reaction time is 200-250ms. Competitive gamers typically achieve 150-200ms, while professional esports players often reach 100-150ms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I improve my reaction time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, reaction time can be improved through regular practice, gaming, and focused training. Most improvements occur within the first few weeks of practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What factors affect reaction time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Factors include age, fatigue level, alertness, caffeine intake, hand-eye coordination, and monitor refresh rate. Proper posture and a good gaming setup also matter."
+        }
+      }
+    ]
+  });
+
   // Page-level SEO meta tags
   useSeo({
+    title: "Reaction Time Test – Measure Reflexes & Improve Speed | CPS Checker",
+    description: "Check and improve your reaction time in milliseconds. Simple and accurate reaction test for gamers and athletes. Test your reflexes now.",
 <<<<<<< Updated upstream
     title: "Reaction Time Test – Measure Reflexes | CPS Checker",
     description: "Check and improve your reaction time in milliseconds. Simple and accurate reaction test for gamers and athletes.",
     url: "https://cpschecker.site/reaction-test",
     image: "https://cpschecker.site/cps-score-og.png",
     keywords: "reaction time test, reflex test, reaction test"
-=======
-    title: "Reaction Time Test – Free Online Reflex Test | CPS Checker",
-    description: "Improve your reflexes with a free online reaction time test. Accurate reaction timing for gamers, athletes, and anyone wanting faster reflex speed.",
-    url: "https://cpschecker.site/reaction-test",
-    image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "free online reaction time test, reflex test, reaction speed test, improve reaction time, gaming reflexes, reaction time measurement"
->>>>>>> Stashed changes
   });
 
   const bestScore = getBestScore("reaction");

@@ -1,6 +1,29 @@
 import { Layout } from "@/components/layout/Layout";
+import { useSeo } from "@/hooks/useSeo";
+import { useJsonLd } from "@/hooks/useJsonLd";
 
 export default function Privacy() {
+  useSeo({
+    title: "Privacy Policy – CPS Checker | Data Protection & Privacy Notice",
+    description: "Read our comprehensive privacy policy. Learn how CPS Checker protects your data, uses localStorage for local storage only, and respects your privacy online.",
+    url: "https://cpschecker.site/privacy",
+    image: "https://cpschecker.site/cps-score-og.png",
+    keywords: "privacy policy, data privacy, privacy protection, GDPR, data security"
+  });
+
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy",
+    "description": "Privacy policy for CPS Checker",
+    "url": "https://cpschecker.site/privacy",
+    "creator": {
+      "@type": "Organization",
+      "name": "CPS Checker",
+      "url": "https://cpschecker.site"
+    }
+  });
+
   return (
     <Layout>
       <div className="container py-12 md:py-16">

@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
@@ -19,7 +19,7 @@ export default function CPSTest() {
   const [cps, setCps] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number>(0);
-  const { addResult, getBestScore } = useTestHistory();
+  const { addResult, clearHistory, getByType, getBestScore } = useTestHistory();
 
   const bestScore = getBestScore("cps");
 
@@ -119,6 +119,46 @@ export default function CPSTest() {
 
   const rating = getScoreRating(cps);
 
+  const cpsHistory = useMemo(() => getByType("cps"), [getByType]);
+  const leaderboard = useMemo(
+    () => [...cpsHistory].sort((a, b) => b.score - a.score).slice(0, 10),
+    [cpsHistory]
+  );
+  const recentRecords = useMemo(() => cpsHistory.slice(0, 10), [cpsHistory]);
+  const graphPoints = useMemo(() => [...recentRecords].reverse(), [recentRecords]);
+
+  // SEO-ready FAQ snippet for rich results
+  useJsonLd({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good CPS score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In our system, 1-5 is beginner, 6-7 is solid, 8-10 is advanced, 11-13 expert, 14+ legendary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CPS Checker store results without a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Results are saved in browser localStorage on your device only, no backend server is used."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I improve my CPS with this tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, use the built-in practice recommendations and repeat 3-4 rounds while tracking score swings."
+        }
+      }
+    ]
+  });
+
   return (
     <Layout>
       <div className="container py-8 md:py-12">
@@ -133,15 +173,21 @@ export default function CPSTest() {
 
         <div className="mx-auto max-w-4xl">
           <div className="mb-8 text-center">
-            <h1 className="mb-4 text-3xl font-black md:text-4xl">
-              <span className="gradient-text">CPS Test</span> - Measure Your Click Speed (Clicks Per Second)
+            <h1 className="mb-4 text-3xl font-black leading-tight tracking-tight text-center md:text-5xl">
+              <span className="gradient-text">CPS Test</span> - Improve Click Speed with Data-Driven Training
             </h1>
-            <p className="text-muted-foreground">
-              The CPS Test (Clicks Per Second Test) measures how fast you can click your mouse.
-              CPS Checker helps gamers and professionals test click speed using accurate timers
-              across 1, 5, 10, 30, and 60 second durations.
+            <p className="mx-auto max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              This page is optimized for photography gamers, competitive FPS, and keyboard/mouse speed training.
+              We use structured data and real-time results to help you rank for keywords like “cps test”, “click speed test”, and “mouse click rate”.
             </p>
-
+            <div className="mt-4 rounded-xl border border-border/50 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 p-4 text-left text-xs text-muted-foreground shadow-sm md:text-sm">
+              <strong className="text-foreground">SEO-Friendly Snapshot:</strong>
+              <ul className="mt-2 space-y-1 pl-4">
+                <li>• Fast loading interactive click meter (1s, 5s, 10s, 30s, 60s).</li>
+                <li>• Result tracking in browser localStorage (no backend, privacy-safe).</li>
+                <li>• Clear intent for search engines: CPS accuracy, tips, rating bands, and progression.</li>
+              </ul>
+            </div>
           </div>
 
           {/* Duration Selector */}
@@ -166,8 +212,8 @@ export default function CPSTest() {
 
           {/* Test Area */}
           <div
-            className={`test-area mx-auto flex min-h-[300px] cursor-pointer flex-col items-center justify-center p-8 select-none transition-all md:min-h-[350px] ${
-              testState === "running" ? "glow-primary" : ""
+            className={`test-area mx-auto flex min-h-[300px] w-full max-w-3xl cursor-pointer flex-col items-center justify-center rounded-2xl border border-border/50 bg-white/80 p-6 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 ease-out md:min-h-[350px] ${
+              testState === "running" ? "glow-primary scale-[1.01]" : "hover:shadow-xl"
             }`}
             onClick={handleClick}
             onContextMenu={(e) => e.preventDefault()}
@@ -396,6 +442,84 @@ export default function CPSTest() {
               </div>
             </article>
           </section>
+
+          <section className="mt-12 rounded-xl border border-border/50 bg-card p-6">
+            <h2 className="mb-4 text-2xl font-bold">Your CPS History</h2>
+            <p className="mb-6 text-muted-foreground">Everything is stored in your browser via localStorage, so the data is private to you and available immediately.</p>
+
+            <div className="mb-8 lg:flex lg:gap-8">
+              <div className="flex-1">
+                <h3 className="mb-2 text-lg font-semibold">Leaderboard (Top 10 CPS)</h3>
+                <ol className="space-y-2">
+                  {leaderboard.length === 0 ? (
+                    <li className="text-muted-foreground">No CPS records yet. Perform a test to start the leaderboard.</li>
+                  ) : (
+                    leaderboard.map((item, index) => (
+                      <li key={item.id} className="flex justify-between rounded-md border border-border/50 px-3 py-2">
+                        <span>{index + 1}. {item.score.toFixed(2)} CPS</span>
+                        <span className="text-xs text-muted-foreground">{new Date(item.timestamp).toLocaleString()}</span>
+                      </li>
+                    ))
+                  )}
+                </ol>
+              </div>
+
+              <div className="mt-6 lg:mt-0 flex-1">
+                <h3 className="mb-2 text-lg font-semibold">Recent 10 Records</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-left text-muted-foreground">
+                        <th className="pb-2">When</th>
+                        <th className="pb-2">Duration</th>
+                        <th className="pb-2">CPS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {recentRecords.length === 0 ? (
+                        <tr><td colSpan={3} className="py-2 text-muted-foreground">No records yet.</td></tr>
+                      ) : (
+                        recentRecords.map((item) => (
+                          <tr key={item.id} className="border-t border-border/50">
+                            <td className="py-2 text-muted-foreground">{new Date(item.timestamp).toLocaleTimeString()}</td>
+                            <td className="py-2">{item.duration}s</td>
+                            <td className="py-2 font-semibold">{item.score.toFixed(2)}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mt-4 flex justify-end">
+                  <Button variant="outline" onClick={clearHistory} disabled={cpsHistory.length === 0}>
+                    Clear History
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="mb-2 text-lg font-semibold">Trend Visual</h3>
+              <div className="flex items-end gap-2 h-36">
+                {graphPoints.length === 0 ? (
+                  <p className="text-muted-foreground">Run a few tests to get your personal trend chart.</p>
+                ) : (
+                  graphPoints.map((item) => {
+                    const barHeight = Math.max(6, Math.min(100, (item.score / 20) * 100));
+                    return (
+                      <div key={item.id} className="relative w-full max-w-[40px] text-center">
+                        <div className="mx-auto h-full w-5 rounded-md bg-primary/70" style={{ height: `${barHeight}%` }} title={`${item.score.toFixed(2)} CPS`} />
+                        <div className="absolute -bottom-6 left-0 right-0 text-[10px] text-muted-foreground">{new Date(item.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">The bars show your last 10 CPS scores (oldest on left, newest on right).</p>
+            </div>
+          </section>
+
         </div>
       </div>
     </Layout>
