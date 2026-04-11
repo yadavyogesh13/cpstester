@@ -71,14 +71,11 @@ export default function ReactionTest() {
 
   // Page-level SEO meta tags
   useSeo({
-    title: "Reaction Time Test – Measure Reflexes & Improve Speed | CPS Checker",
-    description: "Check and improve your reaction time in milliseconds. Simple and accurate reaction test for gamers and athletes. Test your reflexes now.",
-<<<<<<< Updated upstream
-    title: "Reaction Time Test – Measure Reflexes | CPS Checker",
-    description: "Check and improve your reaction time in milliseconds. Simple and accurate reaction test for gamers and athletes.",
+    title: "Reaction Time Test – Free Online Reflex Test | CPS Checker",
+    description: "Improve your reflexes with a free online reaction time test. Accurate reaction timing for gamers, athletes, and anyone wanting faster reflex speed.",
     url: "https://cpschecker.site/reaction-test",
     image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "reaction time test, reflex test, reaction test"
+    keywords: "free online reaction time test, reflex test, reaction speed test, improve reaction time, gaming reflexes, reaction time measurement"
   });
 
   const bestScore = getBestScore("reaction");

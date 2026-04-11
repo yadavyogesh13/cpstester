@@ -76,12 +76,11 @@ export default function SpacebarTest() {
 
   // Page-level SEO meta tags
   useSeo({
-<<<<<<< Updated upstream
-    title: "Spacebar Test – Spacebar Clicking Speed | CPS Checker",
-    description: "Test your spacebar clicking speed and endurance. Press SPACE or click to start and track your SPS. Free spacebar speed test online.",
+    title: "Spacebar Test – Free Spacebar Clicking Speed & SPS Test | CPS Checker",
+    description: "Find your spacebar clicking speed with a free online SPS test. Record your spacebar presses per second, improve your rhythm, and train faster finger speed.",
     url: "https://cpschecker.site/spacebar-test",
     image: "https://cpschecker.site/cps-score-og.png",
-    keywords: "spacebar test, spacebar speed, sps test, spacebar clicker, spacebar clicking, spacebar speed test"
+    keywords: "free spacebar test, spacebar speed test, sps test, spacebar clicker, spacebar clicking speed, online spacebar test"
   });
 
   const bestScore = getBestScore("spacebar");
