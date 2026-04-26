@@ -133,6 +133,20 @@ export default function About() {
               and we're committed to maintaining a transparent and trustworthy platform.
             </p>
 
+            <h2 className="text-2xl font-bold text-foreground">Expertise & Accuracy</h2>
+            <p>
+              At the heart of cpschecker.site is a deep understanding of human-computer interaction (HCI) and 
+              performance psychology. Our team consists of developers and gaming enthusiasts who have spent years 
+              analyzing input latency and motor coordination. We don't just provide a counter; we provide a 
+              scientific benchmark.
+            </p>
+            <p>
+              Our testing algorithms are built to eliminate common browser-based timing errors. By using 
+              high-frequency polling and correcting for system-level jitter, we ensure that your 9.5 CPS 
+              on our site is a real 9.5 CPS. This commitment to technical excellence is why we are 
+              trusted by thousands of users for their daily training routines.
+            </p>
+
             <h2 className="text-2xl font-bold text-foreground">Our Commitment</h2>
             <p>
               We're committed to continuously improving our tools based on user feedback and the latest research 

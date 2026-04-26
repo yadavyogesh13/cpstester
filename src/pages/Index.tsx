@@ -77,10 +77,10 @@ export default function Index() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "CPS Checker",
-    "url": "https://cpschecker.site",
+    "url": "https://www.cpschecker.site",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://cpschecker.site/search?q={query}",
+      "target": "https://www.cpschecker.site/search?q={query}",
       "query-input": "required name=query"
     }
   });
@@ -93,7 +93,7 @@ export default function Index() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://cpschecker.site/"
+        "item": "https://www.cpschecker.site/"
       }
     ]
   });
@@ -141,8 +141,8 @@ export default function Index() {
   useSeo({
     title: "CPS Checker – Free Online Click Speed Test, Reaction Time, Typing & Spacebar Tools",
     description: "CPS Checker is a free online click speed test platform with CPS tests, spacebar speed tests, reaction time tests, and typing tests. Measure your clicks per second, improve reflexes, and track your progress.",
-    url: "https://cpschecker.site/",
-    image: "https://cpschecker.site/cps-score-og.png",
+    url: "https://www.cpschecker.site/",
+    image: "https://www.cpschecker.site/cps-score-og.png",
     keywords: "cps checker, click speed test, cps test, clicks per second, spacebar speed test, reaction time test, typing test, free online speed test"
   });
   return (
@@ -333,6 +333,66 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Science of Performance Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold">The Science of Human Performance</h2>
+              <p className="text-muted-foreground">
+                Understanding the biological and neurological factors that influence your speed.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="rounded-xl border border-border/50 p-6">
+                <div className="mb-4 text-primary">
+                  <Zap className="h-8 w-8" />
+                </div>
+                <h3 className="mb-3 text-lg font-bold">Neural Pathway Speed</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Your reaction time is determined by the speed at which electrical signals travel from your eyes 
+                  to your brain and then to your hands. Regular training can strengthen these pathways.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-border/50 p-6">
+                <div className="mb-4 text-primary">
+                  <Target className="h-8 w-8" />
+                </div>
+                <h3 className="mb-3 text-lg font-bold">Motor Memory</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  High CPS isn't just about fast fingers; it's about muscle memory. Repeated clicking at 
+                  specific intervals trains your motor cortex to automate the clicking motion.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-border/50 p-6">
+                <div className="mb-4 text-primary">
+                  <Award className="h-8 w-8" />
+                </div>
+                <h3 className="mb-3 text-lg font-bold">Cognitive Load</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Distractions increase your cognitive load, slowing down your response time. Our tests are 
+                  designed to be minimal and focused to measure your true peak performance.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 rounded-2xl bg-primary/5 p-8 border border-primary/10">
+              <h3 className="mb-4 text-xl font-bold">How We Measure Accuracy</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Our tools use high-resolution browser timers and event listeners to capture inputs at the 
+                microsecond level. We filter out "noise" and "ghost clicks" to ensure that every score you 
+                see on cpschecker.site is a true reflection of your physical performance. Whether you're 
+                testing on a mechanical gaming keyboard or a laptop touchpad, our algorithms adjust to 
+                provide consistent benchmarks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Content Section for SEO */}
       <section className="py-16">
         <div className="container">
@@ -397,6 +457,18 @@ export default function Index() {
                 {
                   q: "Do you track my personal data?",
                   a: "No. All tests and scores are stored locally on your device. We don't collect personal information, track users, or send data to external servers. Your privacy is our priority."
+                },
+                {
+                  q: "What is the world record for CPS?",
+                  a: "The official world record for CPS is widely debated, but scores above 20 CPS are achieved by elite players using butterfly clicking or drag clicking. In a 10-second test, anything above 12 CPS is considered world-class."
+                },
+                {
+                  q: "How can I test my spacebar speed?",
+                  a: "You can use our dedicated Spacebar Speed Test. It measures how many times you can press the spacebar in a given time. This is a popular test for gamers who use the spacebar for jumping or special abilities."
+                },
+                {
+                  q: "Is clicking fast bad for your mouse?",
+                  a: "Most modern gaming mice are rated for 20-50 million clicks. While high-speed clicking does increase wear, it is well within the design limits of high-quality equipment. If you are serious about CPS testing, we recommend a mouse with mechanical or optical switches."
                 }
               ].map((faq, idx) => (
                 <div key={idx} className="rounded-lg border border-border/50 bg-card p-6">

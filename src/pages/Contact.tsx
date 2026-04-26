@@ -85,6 +85,25 @@ export default function Contact() {
             </div>
           </div>
 
+          {/* Business & Support Grid */}
+          <div className="grid gap-6 md:grid-cols-2 mb-10">
+            <div className="rounded-xl border border-border/50 bg-card p-6">
+              <Send className="mb-4 h-8 w-8 text-primary" />
+              <h3 className="font-bold text-lg text-foreground mb-2">Media & Partnerships</h3>
+              <p className="text-sm text-muted-foreground">
+                For advertising inquiries, guest posts, or media kits, please mention "Partnership" in your email subject line.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border/50 bg-card p-6">
+              <MessageSquare className="mb-4 h-8 w-8 text-primary" />
+              <h3 className="font-bold text-lg text-foreground mb-2">Social Support</h3>
+              <p className="text-sm text-muted-foreground">
+                Reach out to us on Twitter or Instagram for quick questions and community updates.
+              </p>
+            </div>
+          </div>
+
           {/* FORM */}
           <div className="rounded-xl border border-primary/20 bg-background p-8 shadow-sm">
             <MessageSquare className="mx-auto mb-4 h-12 w-12 text-primary" />
